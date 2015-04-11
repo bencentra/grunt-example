@@ -1,0 +1,33 @@
+{
+  "name": "grunt-example",
+  "version": "1.0.0",
+  "description": "An example client-side project setup with Grunt for running build tasks",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bencentra/grunt-example.git"
+  },
+  "keywords": [
+    "grunt",
+    "example"
+  ],
+  "author": "Ben Centra <blcentra@gmail.com> (http://bencentra.com)",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/bencentra/grunt-example/issues"
+  },
+  "homepage": "https://github.com/bencentra/grunt-example",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.18.1",
+    "matchdep": "^0.3.0"
+  }
+}
