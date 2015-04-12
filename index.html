@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grunt Example Demo App</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="build/dist/grunt-example.min.css">
+</head>
+<body ng-app="todo">
+<div class="container" ng-controller="todoCtrl">
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+			<h3>Add To-Do</h3>
+			<form role="Form">
+				<div class="row">
+					<div class="col-xs-9">
+						<input class="form-control" type="text" placeholder="Something Awesome" ng-model="newTodo.title">
+					</div>
+					<div class="col-xs-3">
+						<button type="button" class="btn btn-primary" ng-click="addTodo();">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-6 col-sm-12">
+			<h3>My To-Do List</h3>
+			<table class="table table-striped table-bordered">
+				<tbody>
+					<tr ng-repeat="todo in todos" ng-class="todo.completed ? 'completed' : ''">
+						<td><input type="checkbox" ng-model="todo.completed" ng-disabled="todo.completed"></td>
+						<td class="title">{{ todo.title }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+<script src="build/dist/grunt-example.min.js"></script>
+</body>
+</html>

@@ -67,7 +67,7 @@ module.exports = function(grunt) {
           base: './',
           hostname: '*',
           open: {
-            target: 'http://localhost:8000/demo'
+            target: 'http://localhost:8000'
           }
         }
       }
