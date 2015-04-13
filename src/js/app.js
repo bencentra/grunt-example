@@ -1,6 +1,6 @@
-var app = angular.module('todo', []);
+var app = angular.module('todo', []); 
 
-app.controller('todoCtrl', ['$scope', function($scope) {
+app.controller('TodoCtrl', ['$scope', function($scope) {
 
 	var baseTodo = {
 		title: "",

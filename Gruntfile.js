@@ -17,6 +17,8 @@ module.exports = function(grunt) {
     scssIncludes:   '<%= scssPath %>**/*.scss',
     jsPath:         '<%= srcRoot %>js/',
     jsFiles:        '<%= jsPath %>**/*.js',
+    specPath:       '<%= testRoot %>spec/',
+    specFiles:      '<%= specPath %>**/*-spec.js',
     distPath:       '<%= buildRoot %>dist/',
     distCSSFile:    '<%= distPath %><%= pkg.name %>.css',
     distCSSMinFile: '<%= distPath %><%= pkg.name %>.min.css',
@@ -80,8 +82,8 @@ module.exports = function(grunt) {
         tasks: ['sass', 'cssmin']
       },
       scripts: {
-        files: ['<%= jsFiles %>'],
-        tasks: ['jshint', 'uglify']
+        files: ['<%= jsFiles %>', '<%= specFiles %>'],
+        tasks: ['jshint', 'uglify', 'karma']
       }
     },
 
@@ -89,10 +91,19 @@ module.exports = function(grunt) {
     jshint: {
       jshintrc: '.jshintrc',
       files: ['Gruntfile.js', '<%= jsFiles %>']
+    },
+
+    // Unit test runner - https://github.com/karma-runner/grunt-karma
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true,
+        runnerPort: 8001
+      }
     }
   });
 
-  grunt.registerTask('build',     ['sass', 'cssmin', 'jshint', 'uglify']);
+  grunt.registerTask('build',     ['sass', 'cssmin', 'jshint', 'uglify', 'karma']);
   grunt.registerTask('dev',       ['build', 'watch']);
   grunt.registerTask('serve',     ['connect']);
   grunt.registerTask('default',   ['dev']);
