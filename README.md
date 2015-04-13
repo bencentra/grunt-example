@@ -1,6 +1,6 @@
 # grunt-example
 
-An example client-side project setup with Grunt for running build tasks. Uses Sass, jshint, and Jasmine.
+An example client-side project setup with Grunt for running build tasks. Uses Sass, jshint, Bower, and Karma, among other things.
 
 ## Project Structure
 
@@ -10,6 +10,7 @@ An example client-side project setup with Grunt for running build tasks. Uses Sa
 ... src/
 ...... style/
 ...... js/
+...... vendor/
 ... test/
 ... .jshintrc
 ... Gruntfile.js
@@ -19,10 +20,15 @@ An example client-side project setup with Grunt for running build tasks. Uses Sa
 
 * `build/` - Output directory for compiles CSS and JS files
 * `src/` - Directory for Sass and JS source files
+    * `style/` - Sass source files
+    * `js/` - JavaScript source files
+    * `vendor/` - Directory for libraries installed through bower
 * `test/` - Directory for JS unit tests
+* `.bowerrc` - Config file for Bower
 * `.jshintrc` - Contains jshint settings
 * `Gruntfile.js` - Contains grunt tasks
 * `index.html` - Mail file for the demo app
+* `karma.conf.js` - Config file for karma test runner
 * `package.json` - Contains package info and dependencies
 
 ## Grunt Tasks
