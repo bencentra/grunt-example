@@ -1,0 +1,9 @@
+<h3>My To-Do List</h3>
+<table class="table table-striped table-bordered">
+	<tbody>
+		<tr ng-repeat="todo in todos" ng-class="todo.completed ? 'completed' : ''">
+			<td><input type="checkbox" ng-model="todo.completed" ng-disabled="todo.completed"></td>
+			<td class="title">{{ todo.title }}</td>
+		</tr>
+	</tbody>
+</table>

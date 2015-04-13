@@ -1,4 +1,9 @@
+# Random files
 .DS_Store
+
+# Node/Bower packages
 node_modules/
-build/
 src/vendor/
+
+# Build files
+# build/
