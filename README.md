@@ -2,6 +2,8 @@
 
 An example client-side project setup with Grunt for running build tasks. Uses Sass, jshint, Bower, and Karma, among other things.
 
+Includes a hastily thrown together To-do List app for demonstration purposes.
+
 ## Project Structure
 
 ```
@@ -12,9 +14,11 @@ An example client-side project setup with Grunt for running build tasks. Uses Sa
 ...... js/
 ...... vendor/
 ... test/
+... .bowerrc
 ... .jshintrc
 ... Gruntfile.js
 ... index.html
+... karma.conf.js
 ... package.json
 ```
 
@@ -36,4 +40,3 @@ An example client-side project setup with Grunt for running build tasks. Uses Sa
 * `grunt` or `grunt dev` - Run all build tasks and watch for changes
 * `grunt build` - Compile Sass, minify and concat CSS and JS files
 * `grunt serve` - Run app in local web server at http://localhost:8000/ 
-
