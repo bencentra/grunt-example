@@ -17,6 +17,7 @@ module.exports = function(grunt) {
     scssIncludes:   '<%= scssPath %>**/*.scss',
     jsPath:         '<%= srcRoot %>js/',
     jsFiles:        '<%= jsPath %>**/*.js',
+    viewFiles:      '<%= jsPath %>**/*.html',
     specPath:       '<%= testRoot %>spec/',
     specFiles:      '<%= specPath %>**/*-spec.js',
     distPath:       '<%= buildRoot %>dist/',
@@ -25,6 +26,7 @@ module.exports = function(grunt) {
     distJSFile:     '<%= distPath %><%= pkg.name %>.js',
     distJSMinFile:  '<%= distPath %><%= pkg.name %>.min.js',
     distJSMapFile:  '<%= distPath %><%= pkg.name %>.min.map',
+    distViewFiles:  '<%= distPath %>/views/',
 
     // Compile Sass to CSS - https://github.com/sindresorhus/grunt-sass
     sass: {
@@ -84,6 +86,10 @@ module.exports = function(grunt) {
       scripts: {
         files: ['<%= jsFiles %>', '<%= specFiles %>'],
         tasks: ['jshint', 'uglify', 'karma']
+      },
+      views: {
+        files: ['<%= viewFiles %>'],
+        tasks: ['copy']
       }
     },
 
@@ -105,7 +111,7 @@ module.exports = function(grunt) {
     // Copy files (i.e. Angular templates) - https://github.com/gruntjs/grunt-contrib-copy
     copy: {
       angular: {
-        files: [ {src: '<%= jsPath %>/views/*', dest: '<%= distPath %>/views/', flatten: true, expand: true} ]
+        files: [ {src: '<%= viewFiles %>', dest: '<%= distViewFiles %>', flatten: true, expand: true} ]
       }
     }
   });
