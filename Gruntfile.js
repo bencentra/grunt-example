@@ -100,10 +100,17 @@ module.exports = function(grunt) {
         singleRun: true,
         runnerPort: 8001
       }
+    },
+
+    // Copy files (i.e. Angular templates) - https://github.com/gruntjs/grunt-contrib-copy
+    copy: {
+      angular: {
+        files: [ {src: '<%= jsPath %>/views/*', dest: '<%= distPath %>/views/', flatten: true, expand: true} ]
+      }
     }
   });
 
-  grunt.registerTask('build',     ['sass', 'cssmin', 'jshint', 'uglify', 'karma']);
+  grunt.registerTask('build',     ['sass', 'cssmin', 'copy', 'jshint', 'uglify', 'karma']);
   grunt.registerTask('dev',       ['build', 'watch']);
   grunt.registerTask('serve',     ['connect']);
   grunt.registerTask('default',   ['dev']);
